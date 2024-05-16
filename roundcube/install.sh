@@ -17,7 +17,7 @@ sed -i "s#__EASYMAIL_SSL_PRIVATE_KEY_FILE__#$SSL_Private_Key_File#g" /etc/nginx/
 cd /tmp && wget https://github.com/roundcube/roundcubemail/releases/download/1.6.6/roundcubemail-1.6.6-complete.tar.gz
 tar -xvzf roundcubemail-1.6.6-complete.tar.gz
 mkdir /usr/share/roundcubemail
-cp -r roundcubemail-1.1.1/ /usr/share/nginx/roundcubemail
+cp -r roundcubemail-1.6.6/ /usr/share/nginx/roundcubemail
 cd /usr/share/nginx/roundcubemail/
 sed -i "s/;cgi.fix_pathinfo=.*/cgi.fix_pathinfo=0/" /etc/php5/fpm/php.ini
 
