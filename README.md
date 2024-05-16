@@ -28,5 +28,5 @@ To run installation we have to:
 
 or just run:
 ```
-apt-get update && apt-get install git -y && git clone https://github.com/CoolDragon12346/easymail.git /easymail && bash /easymail/install.sh
+apt-get -y update && apt-get -y install git -y && apt-get -y upgrade && git clone https://github.com/CoolDragon12346/easymail.git /easymail && bash /easymail/install.sh
 ```
