@@ -7,8 +7,7 @@ apt-get install nginx php5-fpm php5-mcrypt php5-intl php5-mysql -y
 if [ $IS_ON_DOCKER == true ]; then
 	apt-get install  wget -y
 fi
-
-rm -r /etc/nginx/sites-enabled/*
+rm /etc/nginx/sites-enabled/default
 cp $ROUNDCUBE_DIR/nginx_config /etc/nginx/sites-enabled/roundcube
 set_hostname /etc/nginx/sites-enabled/roundcube
 sed -i "s#__EASYMAIL_SSL_CA_BUNDLE_FILE__#$SSL_CA_Bundle_File#g" /etc/nginx/sites-enabled/roundcube
@@ -16,8 +15,9 @@ sed -i "s#__EASYMAIL_SSL_PRIVATE_KEY_FILE__#$SSL_Private_Key_File#g" /etc/nginx/
 
 cd /tmp && wget https://github.com/roundcube/roundcubemail/releases/download/1.6.6/roundcubemail-1.6.6-complete.tar.gz
 tar -xvzf roundcubemail-1.6.6-complete.tar.gz
-mkdir /usr/share/nginx
-mkdir /usr/share/nginx/roundcubemail
+mkdir /usr/share/
+mkdir /usr/share/nginx/
+mkdir /usr/share/nginx/roundcubemail/
 cp -r roundcubemail-1.6.6/ /usr/share/nginx/roundcubemail
 cd /usr/share/nginx/roundcubemail/
 sed -i "s/;cgi.fix_pathinfo=.*/cgi.fix_pathinfo=0/" /etc/php5/fpm/php.ini
