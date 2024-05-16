@@ -14,7 +14,7 @@ set_hostname /etc/nginx/sites-enabled/roundcube
 sed -i "s#__EASYMAIL_SSL_CA_BUNDLE_FILE__#$SSL_CA_Bundle_File#g" /etc/nginx/sites-enabled/roundcube
 sed -i "s#__EASYMAIL_SSL_PRIVATE_KEY_FILE__#$SSL_Private_Key_File#g" /etc/nginx/sites-enabled/roundcube
 
-cd /tmp && wget http://sourceforge.net/projects/roundcubemail/files/roundcubemail/1.1.1/roundcubemail-1.1.1-complete.tar.gz/download
+cd /tmp && wget https://github.com/roundcube/roundcubemail/releases/download/1.6.6/roundcubemail-1.6.6-complete.tar.gz
 tar -xvzf roundcubemail-1.1.1-complete.tar.gz
 mkdir /usr/share/roundcubemail
 cp -r roundcubemail-1.1.1/ /usr/share/nginx/roundcubemail
