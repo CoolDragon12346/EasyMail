@@ -18,7 +18,7 @@ send \"$ROOT_MYSQL_PASSWORD\r\"
 
 expect \"Change the root password?\"
 send \"n\r\"
-
+send \"n\r\"
 expect \"Remove anonymous users?\"
 send \"y\r\"
 
