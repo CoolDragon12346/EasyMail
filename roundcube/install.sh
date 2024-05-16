@@ -1,7 +1,9 @@
 # INSTALL Roundcube and all its dependences
 
 ROUNDCUBE_DIR="$CURRENT_DIR/roundcube"
-
+apt-get install -y software-properties-common
+add-apt-repository ppa:ondrej/php
+apt-get update
 apt-get install nginx php5-fpm php5-mcrypt php5-intl php5-mysql -y
 
 if [ $IS_ON_DOCKER == true ]; then
